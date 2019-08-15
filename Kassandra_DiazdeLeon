@@ -1,0 +1,57 @@
+package capicua;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author usuario
+ */
+public class Capicua {
+
+    /**
+     * @param args the command line arguments
+     */
+     public static void main(String[] args) {
+        int N;
+        int aux,
+                inverso = 0, 
+                cifra;
+         int entero=1;
+        int residuo=1;
+        int temp=0;
+        int suma=0;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        do {
+            System.out.print("Introduce un número para saber si es capicua: ");
+            N = sc.nextInt();
+        } while (N < 10);
+ 
+        //le damos la vuelta al número
+        aux = N;
+        while (aux!=0){
+            cifra = aux % 10;
+            inverso = inverso * 10 + cifra;
+            aux = aux / 10;
+        }
+ 
+        if(N == inverso){
+            System.out.println("Es capicua");
+            
+            
+            while (entero > 0){
+            residuo= N % 10;
+            entero = N / 10;
+            N=entero;
+            suma = residuo+temp;
+            temp=suma;
+                  
+        }
+        System.out.print("El resultado de las interacciones es:  " + suma);
+        }else{
+            System.out.println("No es capicua");
+        }
+    }
+    
+}
